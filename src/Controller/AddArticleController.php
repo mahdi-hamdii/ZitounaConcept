@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Categorie;
 use App\Entity\sousCategorie;
 use App\Entity\User;
 use App\Form\ArticleType;
@@ -64,7 +65,10 @@ class AddArticleController extends AbstractController
      */
     public function main()
     {
-        return$this->render('add_article/listArticle.html.twig');
+        $cats = $this->getDoctrine()->getRepository(sousCategorie::class)->findAll();
+        return$this->render('add_article/listArticle.html.twig',[
+            'sousCategories'=>$cats
+        ]);
     }
 
     /**
@@ -80,7 +84,10 @@ class AddArticleController extends AbstractController
         $draw = $request->query->get("draw");
         $search = $request->query->get("search");
         $order = $request->query->get('order');
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+        $filter= $request->query->get('filter');
+        $cat = $filter['cat'];
+        $cat=$this->getDoctrine()->getRepository(sousCategorie::class)->findOneBy(['nom'=>$cat]);
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findBySousCategorie($cat);
         $data = array();
         $result = array();
         $idx = 0;
