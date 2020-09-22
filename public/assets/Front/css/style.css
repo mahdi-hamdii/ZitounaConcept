@@ -1,0 +1,503 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* -------------------------------------------------------------- */
+/* Navbar */
+.nav-ul {
+  margin: 0 auto;
+}
+#nav-item a {
+  color: #cecece;
+  padding: 1rem 0.7rem;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#nav-item .active {
+  color: #fff;
+}
+
+#nav-item a:hover {
+  color: #96bf3d;
+}
+.navbar-brand {
+  margin-left: 10%;
+}
+
+.social {
+  margin-right: 9%;
+}
+
+.social a {
+  color: #fff;
+  font-size: 2rem !important;
+  padding: 5px 8px;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
+}
+.social a:hover {
+  color: #96bf3d;
+}
+
+/* Navbar for meduim screens */
+
+@media only screen and (max-width: 1580px) {
+  .navbar-brand {
+    margin-left: 5%;
+  }
+
+  .social {
+    margin-right: 4%;
+  }
+}
+
+@media only screen and (max-width: 1470px) {
+  .navbar-brand {
+    margin-left: 0%;
+  }
+
+  .social a {
+    color: #fff;
+    font-size: 1.8rem !important;
+  }
+
+  .social {
+    margin-right: 0%;
+  }
+}
+
+@media only screen and (max-width: 1310px) {
+  #nav-item a {
+    padding: 1rem 0.4rem;
+    font-size: 1rem;
+  }
+  .social a {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1158px) {
+  #nav-item a {
+    padding: 1rem 0.4rem;
+    font-size: 0.93rem;
+  }
+  .social a {
+    font-size: 1.1rem !important;
+    padding: 3px 6px;
+  }
+}
+
+@media only screen and (max-width: 1072px) {
+  #nav-item a {
+    padding: 1rem 0.4rem;
+    font-size: 0.83rem;
+  }
+  .social a {
+    font-size: 1.1rem !important;
+    padding: 3px 6px;
+  }
+}
+
+/* For small screens */
+@media only screen and (max-width: 991px) {
+  #nav-item a {
+    padding: 1rem 0.7rem;
+    font-size: 1.4rem;
+  }
+  .social a {
+    font-size: 2rem !important;
+    padding: 5px 8px;
+  }
+  .social {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-item a {
+    padding: 1rem 0.7rem;
+    font-size: 1.2rem;
+  }
+  .social a {
+    font-size: 1.8rem !important;
+    padding: 5px 8px;
+  }
+  .social {
+    text-align: center;
+  }
+}
+
+/* -------------------------------------------------------------- */
+/* Carousel */
+.carousel {
+  position: relative;
+  top: 2.3rem;
+}
+
+.carr-pic {
+  max-height: 62rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Produits */
+.produits {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+.produits .row {
+  margin-top: 3rem;
+}
+
+.title {
+  color: #222;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+/* 
+
+*/
+
+.main-row {
+  background-color: #fff;
+  box-shadow: 2px 10px 20px 10px rgb(211, 211, 211);
+  border-radius: 4px;
+  position: relative;
+  top: 0;
+  transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.main-row:hover {
+  box-shadow: 2px 10px 20px 20px rgb(211, 211, 211);
+  top: -5px;
+}
+
+.main-pic {
+  display: inline-block;
+  width: 50%;
+}
+.main-pic img {
+  width: 100%;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.main-pic-wrapper {
+  position: relative;
+  height: 100%;
+}
+.main-pic .details {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: -1.5rem;
+  opacity: 0;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s 0.1s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.main-pic .details p {
+  margin-top: 0.8rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.main-row:hover .details {
+  bottom: 0;
+  opacity: 1;
+}
+
+.main-text {
+  margin: 1rem 2rem;
+  display: inline-block;
+  width: 35%;
+}
+
+.main-text a {
+  font-size: 2rem;
+  color: rgb(58, 58, 58);
+  padding: 5px 0rem;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.main-text a:hover {
+  color: #49a746;
+}
+
+.main-text .desc {
+  font-size: 1.3rem;
+  font-family: "Raleway", sans-serif;
+}
+
+/* For meduim + small screens */
+@media only screen and (max-width: 991px) {
+  .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .main-text {
+    width: 40%;
+  }
+  .main-text a {
+    font-size: 1.6rem;
+  }
+
+  .main-text .desc {
+    font-size: 1rem;
+  }
+}
+
+/* For small screens */
+
+@media only screen and (max-width: 768px) {
+  .title {
+    text-align: center;
+    font-size: 1.9rem;
+    margin: 0.5rem auto;
+  }
+  .main-pic {
+    width: 100%;
+  }
+  .main-text {
+    width: 100%;
+  }
+  .main-pic .details {
+    bottom: 0rem;
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* Projects */
+
+.promotion {
+  background-color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  margin-top: 5rem;
+}
+
+.promotion .row {
+  margin: 2rem auto;
+}
+
+.article {
+  width: 30%;
+  text-align: center;
+  margin: 1.1rem auto;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 15px 5px rgba(20, 20, 20, 0.5);
+  border-radius: 4px;
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.article:hover {
+  top: -5px;
+  box-shadow: 0px 0px 25px 10px rgba(20, 20, 20, 0.5);
+}
+
+.article img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.article .sale {
+  position: absolute;
+  top: -0.9rem;
+  right: -1.2rem;
+  background-color: rgb(211, 32, 32);
+  color: #fff;
+  font-weight: 600;
+  padding: 1.6rem 0.9rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  transform: rotate(20deg);
+}
+
+.article .name {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: rgb(58, 58, 58);
+}
+.article .desc {
+  color: rgb(58, 58, 58);
+  font-size: 1.3rem;
+}
+
+/* For meduim  */
+@media only screen and (max-width: 991px) {
+  .article {
+    width: 45%;
+  }
+}
+
+/* For small screens */
+@media only screen and (max-width: 767px) {
+  .article {
+    width: 85%;
+  }
+}
+
+/* Projects */
+.projets {
+  padding-top: 2rem;
+  background-color: #fff;
+  padding-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* Footer */
+.footer {
+  padding-top: 2rem;
+  background-color: #1f2124;
+}
+footer .icon {
+  color: #96bf3d;
+}
+.footer .footer-content {
+  width: 30%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.footer .footer-about img {
+  width: 100%;
+}
+
+.footer-desc {
+  color: #fff;
+  margin-top: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.footer-social {
+  padding-bottom: 1rem;
+}
+
+.footer-social p {
+  color: #f2f2f2;
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer-social a {
+  color: #96bf3d;
+  font-weight: 560;
+  font-size: 2.5rem;
+  padding: 0.7rem 0.95rem;
+  margin-left: 0rem;
+  border-radius: 50%;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.footer-social a:hover {
+  color: #333;
+  background-color: #96bf3d;
+}
+
+.footer-produits .footer-produits-title,
+.footer-contact .footer-contact-title {
+  color: #f2f2f2;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding-top: 1.4rem;
+  padding-left: 2rem;
+}
+
+.footer-produits a {
+  text-decoration: none;
+  padding-left: 2rem;
+  display: block;
+  color: #f2f2f2;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+  transition: color 0.3s ease-in-out;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer-produits a:hover {
+  color: #96bf3d;
+}
+
+.footer-location,
+.footer-tel,
+.footer-mail {
+  color: #f2f2f2;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.horizontal-row {
+  width: 100%;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+.copy-right-row {
+  color: #f2f2f2;
+  padding: 1rem;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.copy-right-row p {
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+
+.copy-right-row a {
+  color: #96bf3d;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 991px) {
+  .footer .footer-content {
+    width: 80%;
+    margin: 1rem auto;
+  }
+  .footer-social {
+    text-align: center;
+  }
+  .footer-produits,
+  .footer-contact {
+    text-align: center;
+  }
+  .footer-produits p,
+  .footer-produits a {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .copy-right-row {
+    display: block;
+    margin: 0rem auto;
+  }
+}

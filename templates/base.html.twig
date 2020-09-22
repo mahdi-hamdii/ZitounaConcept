@@ -1,12 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="an">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="icon" href="{{ asset('assets/Front/img/logo/logovert.png') }}" />
+            <!-- Bootstrap link -->
+            <link
+                    rel="stylesheet"
+                    href="{{ asset('assets/Front//css/bootstrap.min.css')}}"
+                    crossorigin="anonymous"/>
+            <!-- Font Awesome CDN -->
+            <link
+                    rel="stylesheet"
+                    href="{{ asset('https://use.fontawesome.com/releases/v5.14.0/css/all.css') }}"
+                    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+                    crossorigin="anonymous"
+            />
+
+            <!-- Added Raleway Font to the website -->
+            <link
+                    href="{{ asset('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap') }}"
+                    rel="stylesheet"
+            />
+
+            <!-- css Link -->
+            <link rel="stylesheet" href="{{ asset('assets/Front/css/style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('assets/Front/css/categorie.css') }}" />
         {% block stylesheets %}{% endblock %}
-    </head>
+        <title>Zitouna Concept</title>
+        </head>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('first_page') }}"
+                ><img src="{{ asset('assets/Front/img/logo/logovert.png') }}" style="width: 5rem;" alt=""
+                    /></a>
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto nav-ul">
+                        <li id="nav-item" class="nav-item">
+                            <a class="nav-link active" href="{{ path('first_page') }}"
+                            >Acceuil <span class="sr-only">(current)</span></a
+                            >
+                        </li>
+                        {% block nav %}
+                        {% endblock %}
+                        <li id="nav-item" class="nav-item">
+                            <a class="nav-link" href="#">Promotion</a>
+                        </li>
+                        <li id="nav-item" class="nav-item">
+                            <a class="nav-link" href="#">Nos services</a>
+                        </li>
+                    </ul>
+
+                    <div class="social">
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-facebook"></i
+                            ></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-instagram"></i
+                            ></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <body>
-        {% block body %}{% endblock %}
+    {% block body %}{% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-about footer-content">
+                    <img src="./img/logo/logohoriz.png" alt="" />
+                    <p class="footer-desc">
+                        Zitouna Concept, fondée en 1984 est une société spécialisée dans
+                        la conception, la fabrication et la commercialisation de mobilier
+                        de bureaux et l'aménagement des espaces.
+                    </p>
+                    <div class="footer-social">
+                        <p>Suivez nous</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-facebook"></i
+                            ></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-instagram"></i
+                            ></a>
+                    </div>
+                </div>
+
+                <div class="footer-produits footer-content">
+                    <p class="footer-produits-title">
+                        NOS PRODUITS
+                    </p>
+                    {% for categorie in categories %}
+                    <a href="{{ path('second_page',{'id' : categorie.id}) }}">{{ categorie.nom}} </a>
+                    {% endfor %}
+                </div>
+
+                <div class="footer-contact footer-content">
+                    <p class="footer-contact-title">
+                        CONTACT
+                    </p>
+                    <p class="footer-location">
+                        <i class="fas fa-location-arrow icon"></i>
+                        Route De Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Nisi, accusamus.
+                    </p>
+                    <p class="footer-tel">
+                        <i class="fas fa-phone-volume icon"></i>
+                        Tel : +216 71 863 611
+                        <br />
+                        <i class="fas fa-phone-square-alt icon"></i> Fax: +216 71 863 592
+                    </p>
+                    <p class="footer-mail">
+                        <i class="far fa-envelope icon"></i> email@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div class="horizontal-row"></div>
+            <div class="row copy-right-row">
+                <p>
+                    Zitouna Concept 2020 © Powered by
+                    <a
+                            target="_blank"
+                            href="https://www.facebook.com/mahdi.bouaziz.319"
+                    >
+                        Mahdi Bouaziz</a
+                    >. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+        <!-- js file -->
+        <script src="{{ asset('assets/Front/js/script.js') }}" type="text/javascript"></script>
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script
+                src="{{ asset('https://code.jquery.com/jquery-3.5.1.slim.min.js') }}"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"
+        ></script>
+        <script
+                src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js') }}"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"
+        ></script>
+        <script
+                src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js') }}"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous"
+        ></script>
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>

@@ -1,0 +1,360 @@
+/* Main content in the mobilierBureau */
+.categorie-container {
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+.categorie-row {
+  justify-content: center;
+}
+
+.categorie-container-desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(109, 109, 109);
+}
+
+.box-a {
+  width: 22%;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none !important;
+  text-align: center;
+  margin: 2rem 1rem;
+  box-shadow: 0px 0px 15px 5px rgba(78, 78, 78, 0.5);
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box-a:hover {
+  top: -5px;
+  box-shadow: 0px 0px 25px 10px rgba(128, 128, 128, 0.5);
+}
+
+.box-a img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.box-a .name {
+  font-size: 1.4rem;
+  color: rgb(58, 58, 58);
+  padding: 0 1rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0;
+  margin-bottom: 0rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.box-a .desc {
+  font-size: 1rem;
+  color: rgb(58, 58, 58);
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Fazet el voir plus */
+.pic-wrapper {
+  position: relative;
+  text-decoration: none;
+}
+
+.pic-wrapper .details {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: absolute;
+  bottom: -1.5rem;
+  opacity: 0;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s 0.1s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.box-a:hover .details {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* Sub Categories */
+
+.box-b {
+  width: 21%;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none !important;
+  text-align: center;
+  margin: 2rem 1rem;
+  position: relative;
+  top: 0;
+}
+
+.box-b-wrapper {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.box-b .details {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: -1.5rem;
+  opacity: 0;
+  transition: bottom 0.4s ease-in-out, opacity 0.4s 0.1s ease-in-out;
+}
+
+.box-b:hover .details {
+  bottom: 0;
+  opacity: 1;
+}
+
+.box-b .details p {
+  margin-top: 0.8rem;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.box-b img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.box-b .name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: rgb(58, 58, 58);
+  padding: 0 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+/* Articles */
+/* Article Pics */
+.box-c1 {
+  display: inline-block;
+  width: 50%;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+.big-pic img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 2px;
+}
+.small-pic img {
+  margin-top: 0.8rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 2px;
+  width: 22%;
+}
+/* Article Desc */
+.box-c2 {
+  display: inline-block;
+  width: 40%;
+  margin-top: 8rem;
+  margin-left: 2.5rem;
+}
+.box-c2 .name {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: rgb(58, 58, 58);
+}
+
+.box-c2 span {
+  font-family: "Raleway", sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.box-c2 .categorie,
+.box-c2 .desc {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(58, 58, 58);
+}
+
+.box-c2 .desc {
+  margin-top: 2.5rem;
+}
+
+.box-c2 .devis {
+  margin-top: 3rem;
+}
+
+.box-c2 .input {
+  width: 5rem;
+  margin-left: 0.6rem;
+}
+
+.box-c2 .devis .btn {
+  padding: 0.7rem 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.article-social {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-social a {
+  color: #fff;
+  font-weight: 560;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  background-color: #49a746;
+  padding: 0.5rem 0.7rem;
+  margin-left: 0.4rem;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.article-social a:hover {
+  background-color: #387935;
+}
+
+/* For meduim  */
+
+@media only screen and (max-width: 1200px) {
+  .box-a {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .box-a {
+    width: 45%;
+  }
+  .box-b {
+    width: 28%;
+  }
+  .box-c2 .desc {
+    margin-top: 1.5rem;
+  }
+  .box-c2 .devis {
+    margin-top: 1.8rem;
+  }
+  .box-c2 .devis .btn {
+    padding: 0.7rem 0.9rem;
+  }
+  .box-c2 .input {
+    width: 4.5rem;
+    margin-left: 0.3rem;
+  }
+}
+
+/* For small screens */
+@media only screen and (max-width: 768px) {
+  .box-a {
+    width: 80%;
+  }
+  .box-b {
+    width: 42%;
+  }
+  .categorie-container-desc {
+    padding: 0 1rem;
+    font-size: 0.96rem;
+  }
+
+  .box-c2 .name {
+    font-size: 1.8rem;
+  }
+
+  .box-c2 span {
+    font-size: 1.1rem;
+  }
+
+  .box-c2 .desc {
+    margin-top: 1rem;
+  }
+
+  .box-c2 .devis {
+    margin-top: 0.6rem;
+  }
+
+  .devis {
+    position: relative;
+  }
+
+  .box-c2 .input {
+    width: 4rem;
+    margin-left: 0rem;
+    position: absolute;
+    right: -4.5rem;
+    top: 0;
+  }
+
+  .box-c2 .devis .btn {
+    font-size: 0.9rem;
+  }
+
+  .article-social {
+    margin-top: 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .article-social a {
+    font-size: 1.4rem;
+  }
+  .box-b .details {
+    bottom: 0rem;
+    opacity: 1;
+  }
+
+  .pic-wrapper .details {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  .box-a:hover .details {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .box-c1 {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8rem;
+  }
+  .box-c2 {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .box-b {
+    width: 80%;
+  }
+
+  .box-b .details {
+    bottom: 0rem;
+    opacity: 1;
+  }
+
+  .box-c1 {
+    width: 80%;
+  }
+}

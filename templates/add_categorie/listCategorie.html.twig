@@ -1,0 +1,35 @@
+{% extends 'adminBase.html.twig' %}
+{% block body %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Liste des categories</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="table-layout: fixed">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for categorie in categories %}
+                        <tr>
+                            <td>{{ categorie.Nom }}</td>
+                            <td><img src="/assets/upload{{  asset(categorie.image) }}" alt="" class="img-fluid px-2 px-sm-3 mt-2 mb-3 "></td>
+                            <td>
+                                <a href="{{ path('add_categorie', {'id': categorie.id } ) }}">
+                                    <i class="fas fa-fw fa-cog"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

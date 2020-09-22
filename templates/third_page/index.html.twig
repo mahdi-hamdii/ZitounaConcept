@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% for categorie in categories %}
+        <li id="nav-item" class="nav-item">
+            <a class="nav-link active" href="{{ path('second_page', {'id': categorie.id} ) }}"
+            >{{ categorie.nom}} <span class="sr-only">(current)</span></a
+            >
+        </li>
+    {% endfor %}
+{% endblock %}
+{% block body %}
+    <main>
+        <div class="container categorie-container">
+            <div class="row">
+                <h2 class="title">{{ souscategorie.nom }}</h2>
+                <p class="categorie-container-desc">
+                  {{ souscategorie.description }}
+                </p>
+            </div>
+            <div class="row categorie-row">
+                {% for article in articles %}
+                <a class="box-b" href="{{ path('article_page', {'id': article.id} ) }}">
+                    <div class="box-b-wrapper">
+                        <img
+                                src="/assets/upload/{{ article.images | first }}"
+                                alt=""
+                        />
+                        <div class="details">
+                            <p>Voir plus <i class="fas fa-angle-double-right"></i></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="name">{{ article.nom }}</p>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

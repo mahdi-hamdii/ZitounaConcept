@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zitouna Concept{% endblock %}
+{% block nav %}
+    {% for categorie in categories %}
+        <li id="nav-item" class="nav-item">
+            <a class="nav-link active" href="{{ path('second_page', {'id': categorie.id} ) }}"
+            >{{ categorie.nom}} <span class="sr-only">(current)</span></a
+            >
+        </li>
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="container categorie-container">
+            <div class="row">
+                <h2 class="title">{{categorie.nom}}</h2>
+                <p class="categorie-container-desc">
+                    {{categorie.description }}
+                </p>
+            </div>
+            <div class="row categorie-row">
+                <!--Armoires Fortes   -->
+                {% for sous in sousCategories %}
+                    <a class="box-a" href="{{ path('third_page', {'id': sous.id} ) }}">
+                        <div class="pic-wrapper">
+                            <img
+                                    src="/assets/upload/{{ sous.image }}"
+                                    alt="not loaded"
+                            />
+                            <p class="details">
+                                Voir plus <i class="fas fa-angle-double-right"></i>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="name">{{ sous.nom }}</p>
+                            <p class="desc">
+                                {{ sous.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
