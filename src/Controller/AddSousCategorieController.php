@@ -19,8 +19,10 @@ class AddSousCategorieController extends AbstractController
      */
     public function index(Request $request,SluggerInterface $slugger, EntityManagerInterface $manager,sousCategorie $sousCategorie=null )
     {
+        $test=false;
         if(!$sousCategorie){
             $sousCategorie= new sousCategorie();
+            $test=true;
         }
         $form = $this->createForm(SousCategorieType::class, $sousCategorie);
         $form->handleRequest($request);
@@ -49,7 +51,13 @@ class AddSousCategorieController extends AbstractController
             }
             $manager->persist($sousCategorie);
             $manager->flush();
-            return $this->redirectToRoute('add_sous_categorie');
+            if ($test=false){
+                $this->addFlash('success','sous categorie edité avec succès');
+            }else{
+                $this->addFlash('success','sous categorie ajouté avec succès');
+
+            }
+            return $this->redirectToRoute('sous_categorie_list');
         }
 
         return $this->render('add_sous_categorie/index.html.twig', [
@@ -59,10 +67,29 @@ class AddSousCategorieController extends AbstractController
     /**
      * @Route("/admin/sous/categorie/list",name="sous_categorie_list")
      */
-    public function list(){
-        $sousCategories=$this->getDoctrine()->getRepository(sousCategorie::class)->findAll();
+    public function list(Request $request){
+       $categorie= $request->get('categorie');
+       if($categorie){
+         $categorie=$this->getDoctrine()->getRepository(Categorie::class)->find($categorie);
+       }
+        $page = $request->query->get('page') ?? 1 ;
+        $sousCategories=$this->getDoctrine()->getRepository(sousCategorie::class);
+        $categories=$this->getDoctrine()->getRepository(Categorie::class)->findAll();
+        $nbreEnregistrements=count($sousCategories->findAll());
+        $nbpage=($nbreEnregistrements%10)?(intdiv($nbreEnregistrements,10))+1:(intdiv($nbreEnregistrements,10));
+        if ($categorie){
+            $sousCategories = $sousCategories->findBy(
+                ['categorie'=>$categorie],array('id'=>'ASC'),10, ($page -1 ) * 10 );
+        }
+        else{
+            $sousCategories = $sousCategories->findBy(
+                ['categorie'=>$categorie],array('id'=>'ASC'),10, ($page -1 ) * 10 );
+        }
+
         return $this->render('add_sous_categorie/list.html.twig',[
-            'souscategories'=>$sousCategories
+            'souscategories'=>$sousCategories,
+            'nbpage'=>$nbpage,
+            'categories'=>$categories
         ]);
     }
 }

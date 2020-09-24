@@ -5,6 +5,27 @@
             <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Liste des categories</h6>
         </div>
         <div class="card-body">
+            {% for message in app.flashes('deleted') %}
+                <div class="alert alert-danger">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <form action="{{ path('sous_categorie_list') }}" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">sélectionner une catégorie</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="categorie">
+                    {% for categorie in categories %}
+                    <option value="{{ categorie.id }}">{{ categorie.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="table-layout: fixed">
                     <thead>
@@ -35,5 +56,14 @@
             </div>
         </div>
     </div>
+    <center>
+    <nav aria-label="Page navigation example" class="" >
+        <ul class="pagination">
+            {% for p in 1..nbpage %}
+                <li class="page-item"><a href="{{ path('sous_categorie_list', {'page': p}) }}" class="page-link">{{ p }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    </center>
 
 {% endblock %}

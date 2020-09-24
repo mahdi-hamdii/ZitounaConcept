@@ -21,6 +21,7 @@ class ArticleType extends AbstractType
             ->add('images',FileType::class,array(
                 'mapped'=>false,
                 'multiple'=>true,
+                'required'=>false
             ))
             ->add('sousCategorie')
             ->add('submit',SubmitType::class)

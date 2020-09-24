@@ -18,11 +18,15 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class AddArticleController extends AbstractController
 {
     /**
-     * @Route("/admin/add/article", name="add_article")
+     * @Route("/admin/add/article/{id?0}", name="add_article")
      */
-    public function index(Request $request,SluggerInterface $slugger, EntityManagerInterface $manager )
+    public function index(Request $request,SluggerInterface $slugger, EntityManagerInterface $manager, Article $article=null )
     {
-        $article= new Article();
+        $test=false;
+        if(!$article){
+            $test=true;
+            $article= new Article();
+        }
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -52,7 +56,12 @@ class AddArticleController extends AbstractController
 
             $manager->persist($article);
             $manager->flush();
-            return $this->redirectToRoute('add_article');
+            if ($test==false){
+                $this->addFlash('success',"Article edité avec succès");
+            }else{
+                $this->addFlash('success',"Article ajouté avec succès");
+            }
+            return $this->redirectToRoute('articleList');
         }
 
         return $this->render('add_article/index.html.twig', [
@@ -98,6 +107,7 @@ class AddArticleController extends AbstractController
             $operatorArray[]= $article->getNom();
             $operatorArray[]= $article->getDimension();
             $operatorArray[]= $article->getRetour();
+            $operatorArray[]=$this->render('add_article/actions.html.twig',['article'=>$article])->getContent();
             $result[] = $operatorArray;
         };
         $count = count($this->getDoctrine()->getRepository(Article::class)->findAll());
@@ -106,6 +116,18 @@ class AddArticleController extends AbstractController
         $data['recordsFiltered'] = $count;
         $data['data'] = $result;
         return new JsonResponse($data);
+
+    }
+    /**
+     * @Route("admin/delete/article/{id}",name="admin_delete_article")
+     */
+
+    public function deleteCategory(Request $request,Article $article){
+        $manager=$this->getDoctrine()->getManager();
+        $manager->remove($article);
+        $manager->flush();
+        $this->addFlash('deleted','article deleted successfully');
+        return $this->redirectToRoute("articleList");
 
     }
 }
