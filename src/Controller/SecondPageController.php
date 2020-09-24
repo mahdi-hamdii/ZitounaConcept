@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SecondPageController extends AbstractController
 {
     /**
-     * @Route("/second/page/{id}", name="second_page")
+     * @Route("/categorie/{id}", name="second_page")
      */
     public function index(Request $request, Categorie $categorie)
     {

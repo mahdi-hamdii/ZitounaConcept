@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ThirdPageController extends AbstractController
 {
     /**
-     * @Route("/third/page/{id}", name="third_page")
+     * @Route("/article/page/{id}", name="third_page")
      */
     public function index(sousCategorie $sousCategorie)
     {
