@@ -16,18 +16,14 @@
                 <div class="box-c1">
                     <div class="big-pic" id="big-pic"></div>
                     <div class="small-pic">
-                        <img
-                                id="default-pic"
-                                src="/assets/upload/{{ article.images|first }}"
-                                alt=""
-                        />
+                        
                         {%  for image in article.images %}
                         <img
-                                id="pic-2"
-                                src="assets/upload/{{ image }}"
+                                src="/assets/upload/{{image}}"
                                 alt=""
                         />
                         {% endfor %}
+                       
                     </div>
                 </div>
 

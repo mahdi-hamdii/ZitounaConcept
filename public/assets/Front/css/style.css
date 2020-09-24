@@ -137,6 +137,13 @@ body {
   }
 }
 
+@media only screen and (max-width: 340px) {
+  #nav-item a {
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+  }
+}
+
 /* -------------------------------------------------------------- */
 /* Carousel */
 .carousel {
@@ -145,7 +152,7 @@ body {
 }
 
 .carr-pic {
-  max-height: 62rem;
+  max-height: 50rem;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -168,7 +175,6 @@ body {
 }
 
 /* 
-
 */
 
 .main-row {
@@ -275,6 +281,10 @@ body {
     font-size: 1.9rem;
     margin: 0.5rem auto;
   }
+  .main-row {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
   .main-pic {
     width: 100%;
   }
@@ -357,6 +367,9 @@ body {
 @media only screen and (max-width: 767px) {
   .article {
     width: 85%;
+  }
+  .box-projects {
+    margin: 1.5rem auto !important;
   }
 }
 
