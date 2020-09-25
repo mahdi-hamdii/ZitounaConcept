@@ -38,7 +38,7 @@
                                         <option value="{{ souscat.nom }}">{{ souscat.nom }}</option>
                                     {% endfor%}
                                 </select>
-                                <a class="btn  btn-info" id="filter" name="filter" type="button" >Filter</a>
+                                <a class="btn  btn-primary" style="color:#fff; margin-left:1rem; margin-bottom:1rem" id="filter" name="filter" type="button" >Filter</a>
                             </form>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                 fill_datatable(filter_cat);
                 console.log(filter_cat);
             }else {
-                alert('Select Both filter option');
+                //alert('Select Both filter option');
                 $('#memListTable').DataTable().destroy();
                 fill_datatable();
             }

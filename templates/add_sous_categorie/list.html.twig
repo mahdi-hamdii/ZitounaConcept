@@ -16,7 +16,7 @@
                 </div>
             {% endfor %}
             <form action="{{ path('sous_categorie_list') }}" method="post">
-            <div class="form-group">
+            <div class="form-group" style="display:inline-block; width:15rem">
                 <label for="exampleFormControlSelect1">sélectionner une catégorie</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="categorie">
                     {% for categorie in categories %}
