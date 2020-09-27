@@ -10,14 +10,14 @@
                     class="fa fa-trash white"></i>
         </a>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter{{ article.id }}">
             P
         </button>
     </div>
 </center>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter{{ article.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -27,11 +27,14 @@
         </button>
       </div>
       <div class="modal-body">
-        Test123
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Promotion</button>
+          <form action="{{ path('admin_promotion_article',{'id':article.id}) }}" method="post">
+              <input type="number" name="promotion" class="form-control">
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-warning">Promotion</button>
+              </div>
+          </form>
+
       </div>
     </div>
   </div>

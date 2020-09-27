@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% for categorie in categories %}
+        <li id="nav-item" class="nav-item">
+            <a class="nav-link active" href="{{ path('second_page', {'id': categorie.id} ) }}"
+            >{{ categorie.nom}} <span class="sr-only">(current)</span></a
+            >
+        </li>
+    {% endfor %}
+{% endblock %}
+{% block body %}
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="box-c1">
+                    <div class="big-pic" id="big-pic"></div>
+                    <div class="small-pic">
+
+                        {%  for image in project.images %}
+                            <img
+                                    src="/assets/upload/{{image}}"
+                                    alt=""
+                            />
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <div class="box-c2">
+                    <p class="name">{{ project.nom }}</p>
+                    <p class="categorie">
+                    </p>
+                    <p class="desc">
+                        <span>Dimension: </span>{{project.dimension }} <br />
+                        <span>Retour: </span> {{ project.retour}}
+                    </p>
+                    <form class="form-inline">
+                        <div class="devis">
+                            <a type="button" class="btn btn-success" href="{{ path('contact_article',{'id':project.id}) }}">
+                                Demande de Devis
+                            </a>
+                            <input
+                                    class="form-control form-control-lg input"
+                                    type="number"
+                                    value="1"
+                            />
+                        </div>
+                    </form>
+
+                    <div class="article-social">
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-facebook"></i
+                            ></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        ><i class="fab fa-instagram"></i
+                            ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

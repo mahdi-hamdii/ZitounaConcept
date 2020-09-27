@@ -80,6 +80,19 @@
             </div>
         </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-calendar"></i>
+                <span>Projet</span>
+            </a>
+            <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities" data-parent="#accordionSidebar" style="">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Custom Utilities:</h6>
+                    <a class="collapse-item" href="{{ asset('/admin/add/project') }}">Ajouter Projet</a>
+                    <a class="collapse-item" href="{{ asset('/admin/project/list') }}">Liste des Projets</a>
+                </div>
+            </div>
+        </li>
 
         <li class="nav-item">
             {% if app.user %}

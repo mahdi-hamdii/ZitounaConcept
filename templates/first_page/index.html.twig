@@ -101,62 +101,22 @@
         <div class="container">
             <h2 class="title">Nos Projets</h2>
             <div class="row">
-                <a class="box-a" href="./mobilierBureau/bureauDirection.html">
+                {% for project in projects %}
+                <a
+                        class="box-a box-projects"
+                        href="{{path('project_page',{'id':project.id}) }}"
+                >
                     <div class="pic-wrapper">
-                        <img
-                                src="../img/mobilierBureau/nouveautes/mobBurNew4.jpg"
-                                alt=""
-                        />
+                        <img src="/assets/upload/{{ project.images | first }}" alt="" />
                         <p class="details">
                             Voir plus <i class="fas fa-angle-double-right"></i>
                         </p>
                     </div>
                     <div>
-                        <p class="name" style="padding-bottom: 1rem;">Projet 1</p>
+                        <p class="name" style="padding-bottom: 1rem">{{ project.nom }}</p>
                     </div>
                 </a>
-                <a class="box-a" href="./mobilierBureau/bureauDirection.html">
-                    <div class="pic-wrapper">
-                        <img
-                                src="../img/mobilierBureau/nouveautes/mobBurNew1.jpg"
-                                alt=""
-                        />
-                        <p class="details">
-                            Voir plus <i class="fas fa-angle-double-right"></i>
-                        </p>
-                    </div>
-                    <div>
-                        <p class="name" style="padding-bottom: 1rem;">Projet 2</p>
-                    </div>
-                </a>
-                <a class="box-a" href="./mobilierBureau/bureauDirection.html">
-                    <div class="pic-wrapper">
-                        <img
-                                src="../img/mobilierBureau/nouveautes/mobBurNew2.jpg"
-                                alt=""
-                        />
-                        <p class="details">
-                            Voir plus <i class="fas fa-angle-double-right"></i>
-                        </p>
-                    </div>
-                    <div>
-                        <p class="name" style="padding-bottom: 1rem;">Projet 3</p>
-                    </div>
-                </a>
-                <a class="box-a" href="./mobilierBureau/bureauDirection.html">
-                    <div class="pic-wrapper">
-                        <img
-                                src="../img/mobilierBureau/nouveautes/mobBurNew3.jpg"
-                                alt=""
-                        />
-                        <p class="details">
-                            Voir plus <i class="fas fa-angle-double-right"></i>
-                        </p>
-                    </div>
-                    <div>
-                        <p class="name" style="padding-bottom: 1rem;">Projet 4</p>
-                    </div>
-                </a>
+                {% endfor %}
             </div>
         </div>
     </section>

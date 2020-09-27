@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    {% for categorie in categories %}
+        <li id="nav-item" class="nav-item">
+            <a class="nav-link active" href="{{ path('second_page', {'id': categorie.id} ) }}"
+            >{{ categorie.nom}} <span class="sr-only">(current)</span></a
+            >
+        </li>
+    {% endfor %}
+{% endblock %}
+{% block body %}
+    <section class="promotion">
+        <div class="container">
+            <h2 class="title">Promotion</h2>
+            <div class="row">
+                {% for article in articles %}
+                <div class="article promo-box">
+                    <a href="{{ path('article_page', {'id': article.id} ) }}">
+                        <div class="pic-wrapper">
+                            <img
+                                    src="/assets/upload/{{ article.images | first }}"
+                                    alt=""
+                            />
+                            <p class="details">
+                                Voir plus <i class="fas fa-angle-double-right"></i>
+                            </p>
+                        </div>
+                    </a>
+                    <p class="name">{{ article.nom }}</p>
+                    <p class="sale">- {{ article.promotion }}%</p>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

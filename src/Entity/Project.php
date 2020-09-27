@@ -2,19 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
+use App\Repository\ProjectRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ORM\Entity(repositoryClass=ProjectRepository::class)
  */
-class Article
+class Project
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    * @ORM\Id
+    * @ORM\GeneratedValue
+    * @ORM\Column(type="integer")
+    */
     private $id;
 
     /**
@@ -37,15 +37,6 @@ class Article
      */
     private $images = [];
 
-    /**
-     * @ORM\ManyToOne(targetEntity=sousCategorie::class, inversedBy="articles")
-     */
-    private $sousCategorie;
-
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $promotion;
 
     public function getId(): ?int
     {
@@ -103,35 +94,8 @@ class Article
         $this->images[]=$image;
     }
 
-    public function getSousCategorie(): ?sousCategorie
-    {
-        return $this->sousCategorie;
-    }
-
-    public function setSousCategorie(?sousCategorie $sousCategorie): self
-    {
-        $this->sousCategorie = $sousCategorie;
-
-        return $this;
-    }
     public function __toString()
     {
         return $this->getNom();
-    }
-
-    public function getPromotion(): ?float
-    {
-        return $this->promotion;
-    }
-
-    public function setPromotion(?float $promotion): self
-    {
-        $this->promotion = $promotion;
-
-        return $this;
-    }
-    public function __construct()
-    {
-        $this->promotion=0;
     }
 }

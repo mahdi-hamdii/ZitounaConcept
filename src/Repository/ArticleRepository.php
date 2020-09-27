@@ -35,7 +35,16 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-
+    /**
+     * @return Article[] Returns an array of Article objects
+     */
+    public function findPromotion(){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.promotion > :val')
+            ->setParameter('val',1 )
+            ->getQuery()
+            ->getResult();
+    }
     /*
     public function findOneBySomeField($value): ?Article
     {

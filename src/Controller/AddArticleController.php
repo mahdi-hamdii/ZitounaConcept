@@ -130,4 +130,18 @@ class AddArticleController extends AbstractController
         return $this->redirectToRoute("articleList");
 
     }
+    /**
+     * @Route("admin/promotion/article/{id}",name="admin_promotion_article")
+     */
+    public function PromotionArticle(Request $request, Article $article){
+        $promotion= $request->get('promotion');
+        $article->setPromotion($promotion);
+        $manager=$this->getDoctrine()->getManager();
+        $manager->persist($article);
+        $manager->flush();
+        $this->addFlash('success','article mis en promotion');
+        return $this->redirectToRoute("articleList");
+
+
+    }
 }
