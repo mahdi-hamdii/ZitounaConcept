@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class FirstPageController extends AbstractController
 {
     /**
-     * @Route("/acceuil", name="first_page")
+     * @Route("/", name="first_page")
      */
     public function index()
     {
