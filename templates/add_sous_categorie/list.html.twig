@@ -18,7 +18,7 @@
             <form action="{{ path('sous_categorie_list') }}" method="post">
             <div class="form-group" style="display:inline-block; width:15rem">
                 <label for="exampleFormControlSelect1">sélectionner une catégorie</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="categorie ">
+                <select class="form-control" id="exampleFormControlSelect1" name="categorie">
                     {% for categorie in categories %}
                     <option value="{{ categorie.id }}">{{ categorie.nom }}</option>
                     {% endfor %}
@@ -48,7 +48,11 @@
                                 <a href="{{ path('add_sous_categorie', {'id': souscategorie.id } ) }}">
                                     <i class="fas fa-fw fa-cog"></i>
                                 </a>
+                                <a href="{{ path('delete_sous_categorie', {'id': souscategorie.id}) }}">
+                                    <i class="fas fa-fw fa-trash"></i>
+                                </a>
                             </td>
+
                         </tr>
                     {% endfor %}
                     </tbody>

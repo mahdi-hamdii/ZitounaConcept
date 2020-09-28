@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Entity\sousCategorie;
 use App\Form\CategorieType;
@@ -77,19 +78,23 @@ class AddSousCategorieController extends AbstractController
         $categories=$this->getDoctrine()->getRepository(Categorie::class)->findAll();
         $nbreEnregistrements=count($sousCategories->findAll());
         $nbpage=($nbreEnregistrements%10)?(intdiv($nbreEnregistrements,10))+1:(intdiv($nbreEnregistrements,10));
-        if ($categorie){
             $sousCategories = $sousCategories->findBy(
                 ['categorie'=>$categorie],array('id'=>'ASC'),10, ($page -1 ) * 10 );
-        }
-        else{
-            $sousCategories = $sousCategories->findBy(
-                ['categorie'=>$categorie],array('id'=>'ASC'),10, ($page -1 ) * 10 );
-        }
-
         return $this->render('add_sous_categorie/list.html.twig',[
             'souscategories'=>$sousCategories,
             'nbpage'=>$nbpage,
             'categories'=>$categories
         ]);
+    }
+    /**
+     * @Route("/admin/sous/categorie/delete/{id}",name="delete_sous_categorie")
+     */
+    public function deleteCategory(Request $request,sousCategorie $sousCategorie){
+        $manager=$this->getDoctrine()->getManager();
+        $manager->remove($sousCategorie);
+        $manager->flush();
+        $this->addFlash('deleted','sous categorie deleted successfully');
+        return $this->redirectToRoute("sous_categorie_list");
+
     }
 }
