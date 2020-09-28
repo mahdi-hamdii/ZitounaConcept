@@ -96,7 +96,7 @@ class AddArticleController extends AbstractController
         $filter= $request->query->get('filter');
         $cat = $filter['cat'];
         $cat=$this->getDoctrine()->getRepository(sousCategorie::class)->findOneBy(['nom'=>$cat]);
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findBySousCategorie($cat);
+        $articles = $this->getDoctrine()->getRepository(Article::class)->findBySousCategorie($cat,$search["value"],$length,$start);
         $data = array();
         $result = array();
         $idx = 0;

@@ -22,17 +22,23 @@ class ArticleRepository extends ServiceEntityRepository
      /**
       * @return Article[] Returns an array of Article objects
       */
-    public function findBySousCategorie($cat=null)
+    public function findBySousCategorie($cat=null, $search,$length,$start)
     {
          $qb =$this->createQueryBuilder('a');
          if($cat!=null){
              $qb->andWhere('a.sousCategorie = :cat')
                  ->setParameter('cat', $cat);
          }
-
-           return $qb->orderBy('a.id', 'ASC')
-            ->getQuery()
-            ->getResult()
+        if ($search!=''){
+            $qb
+                ->andWhere("a.nom  like :search or a.dimension like :search or a.retour like :search")
+                ->setParameter('search', ('%' . $search . '%'));
+        }
+           return $qb->setMaxResults($length)
+                ->setFirstResult($start)
+                ->orderBy('a.id', 'ASC')
+                ->getQuery()
+                ->getResult()
         ;
     }
     /**
