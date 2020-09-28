@@ -48,6 +48,7 @@ class AddCategorieController extends AbstractController
             }
             $manager->persist($categorie);
             $manager->flush();
+            $this->addFlash('success', 'categorie added successfully');
             return $this->redirectToRoute('add_categorie');
         }
 
@@ -63,5 +64,16 @@ class AddCategorieController extends AbstractController
         return $this->render('add_categorie/listCategorie.html.twig',[
             'categories'=>$categories
         ]);
+    }
+    /**
+     * @Route("/admin/categorie/delete/{id}",name="delete_categorie")
+     */
+    public function deleteCategory(Request $request,Categorie $categorie){
+        $manager=$this->getDoctrine()->getManager();
+        $manager->remove($categorie);
+        $manager->flush();
+        $this->addFlash('deleted','categorie deleted successfully');
+        return $this->redirectToRoute("categorie_list");
+
     }
 }
