@@ -329,6 +329,8 @@ body {
 .article img {
   width: 100%;
   border-radius: 4px;
+  height: 15rem;
+  object-fit: cover;
 }
 
 .article .sale {
