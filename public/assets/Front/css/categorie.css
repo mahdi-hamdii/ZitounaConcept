@@ -13,6 +13,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   color: rgb(109, 109, 109);
+  width: 100%;
 }
 
 .box-a {
@@ -301,7 +302,7 @@
     width: 42%;
   }
   .categorie-container-desc {
-    padding: 0 1rem;
+    padding: 0 3rem;
     font-size: 0.96rem;
   }
 

@@ -57,6 +57,16 @@ body {
   }
 }
 
+@media only screen and (max-width: 1266px) {
+  .navbar-brand {
+    margin-left: 0%;
+  }
+
+  .social {
+    margin-right: 0%;
+  }
+}
+
 
 
 @media only screen and (max-width: 1200px) {
@@ -98,6 +108,10 @@ body {
   .social {
     text-align: center;
   }
+  .navbar-brand {
+    margin-left: 3%;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {
