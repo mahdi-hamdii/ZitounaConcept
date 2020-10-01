@@ -188,27 +188,44 @@
   font-weight: 600;
   font-size: 2rem;
   color: rgb(58, 58, 58);
+  margin-bottom: 0rem;
+}
+
+.box-c2 .art-desc{
+  font-family: "Raleway", sans-serif;
+  color: rgb(58, 58, 58);
+  font-size: 1rem;
 }
 
 .box-c2 span {
   font-family: "Raleway", sans-serif;
   color: rgb(0, 0, 0);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-.box-c2 .categorie,
-.box-c2 .desc {
+.box-c2 .categorie{
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(58, 58, 58);
+  margin-bottom: .4rem;
 }
 
-.box-c2 .desc {
-  margin-top: 2.5rem;
+.box-c2 .dimention{
+  margin-bottom: 0.2rem;
+  margin-top: 0;
+  
 }
+
+.box-c2 .dim{
+  margin-bottom: 0.1rem;
+  margin-top: 0;
+  margin-left: 1.2rem;
+  
+}
+
 
 .box-c2 .devis {
-  margin-top: 3rem;
+  margin-top: .6rem;
 }
 
 .box-c2 .input {
@@ -219,28 +236,49 @@
 .box-c2 .devis .btn {
   padding: 0.7rem 1.2rem;
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
+  font-size: .9rem;
 }
 
 .article-social {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .article-social a {
   color: #fff;
   font-weight: 560;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   border-radius: 50%;
   background-color: #49a746;
-  padding: 0.5rem 0.7rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
   margin-left: 0.4rem;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .article-social a:hover {
   background-color: #387935;
+}
+
+.art-sous-title{
+  display: block;
+  margin-bottom: .2rem;
+  margin-top: 1rem;
+  font-family: "Raleway", sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.art-des-sous-title{
+  display: block;
+  margin-top:0rem;
+  margin-bottom: 0rem;
+  margin-left: 1.2rem;
 }
 
 /* For meduim  */
@@ -338,6 +376,8 @@
     font-size: 0.9rem;
   }
 
+  
+
   .article-social {
     margin-top: 1.5rem;
     margin-bottom: 1.8rem;
@@ -385,6 +425,15 @@
     margin: 0 auto;
     margin-top: 1.4rem;
   }
+
+  
+.art-sous-title{
+ margin-left: 1.5rem;
+}
+
+.art-des-sous-title{
+  margin-left:2.2rem ;
+}
   
 .big-pic img {
   height: 22rem;
