@@ -37,11 +37,11 @@
                         <br/>
                     <form>
 
-                    <select name="dimension" id="dimension" >
+                    <div class=" mb-3" name="dimension" id="dimension" >
                     {% for dim in article.tabDimension %}
-                    <option class="dim"> {{ dim }}</option>
+                    <p class="dim"> -{{ dim }}</p>
                     {% endfor %}
-                      </select>
+                      </div>
                         <div class="form-inline">
                         <div class="devis">
                             <button type="submit" class="btn btn-success">
@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col" style="padding-bottom: 2rem;">
                         {% if article.sousTitre1 is not null  %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre1 }}</p>
+                        <p class="art-sous-title"> <i class="fas fa-hand-point-right"></i> {{ article.sousTitre1 }}</p>
                         {% endif %}
                         {% if article.desc1SousT1 is not null  %}
                         <p class="art-des-sous-title">- {{ article.desc1SousT1 }}</p>
@@ -81,7 +81,7 @@
                         <p class="art-des-sous-title">- {{ article.desc3sousT1 }}</p>
                         {% endif %}
                         {% if article.sousTitre2 is not null  %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre2 }}</p>
+                        <p class="art-sous-title"> <i class="fas fa-hand-point-right"></i> {{ article.sousTitre2 }}</p>
                         {% endif %}
                         {% if article.desc1SousT2 %}
                         <p class="art-des-sous-title">- {{ article.desc1SousT2 }}</p>
@@ -93,7 +93,7 @@
                         <p class="art-des-sous-title">- {{ article.desc3sousT2 }}</p>
                         {% endif %}
                         {% if article.sousTitre3 %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre3 }}</p>
+                        <p class="art-sous-title">  <i class="fas fa-hand-point-right"></i> {{ article.sousTitre3 }}</p>
                         {% endif %}
                         {% if article.desc1SousT3 %}
                         <p class="art-des-sous-title">- {{ article.desc1SousT3 }} </p>

@@ -336,13 +336,13 @@ body {
 .article .sale {
   position: absolute;
   top: -0.9rem;
-  right: -1.2rem;
+  right: -1.1rem;
   background-color: rgb(211, 32, 32);
   color: #fff;
   font-weight: 600;
-  padding: 1.6rem 0.9rem;
+  padding: 1rem 0.9rem;
   border-radius: 50%;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   transform: rotate(20deg);
 }
 
@@ -508,4 +508,8 @@ footer .icon {
     display: block;
     margin: 0rem auto;
   }
+}
+
+.tags-element  {
+  margin-bottom: 1rem !important;
 }
