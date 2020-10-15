@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Entity\Project;
+use App\Entity\SousArticle;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,6 +30,17 @@ class ArticlePageController extends AbstractController
         $categories=$this->getDoctrine()->getRepository(Categorie::class)->findAll();
         return $this->render('article_page/project.html.twig', [
             'project' => $project,
+            'categories'=>$categories
+        ]);
+    }
+    /**
+     * @Route("/sous/article/page/{id}", name="sous_article_page")
+     */
+    public function SousArticle(SousArticle $article)
+    {
+        $categories=$this->getDoctrine()->getRepository(Categorie::class)->findAll();
+        return $this->render('sous_article_page/sousArticle.html.twig', [
+            'article' => $article,
             'categories'=>$categories
         ]);
     }

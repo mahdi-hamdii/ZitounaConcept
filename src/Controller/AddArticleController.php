@@ -27,6 +27,7 @@ class AddArticleController extends AbstractController
             $test=true;
             $article= new Article();
         }
+        $article->addTabDimension('dim1');
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -106,8 +107,8 @@ class AddArticleController extends AbstractController
             $operatorArray[]= $article->getId();
             $operatorArray[]= $article->getSousCategorie()->getNom();
             $operatorArray[]= $article->getNom();
-            $operatorArray[]= $article->getDimension();
-            $operatorArray[]= $article->getRetour();
+            $operatorArray[]= $article->getTabDimension();
+            $operatorArray[]= $article->getDescription();
             $operatorArray[]=$this->render('add_article/actions.html.twig',['article'=>$article])->getContent();
             $result[] = $operatorArray;
         };

@@ -1,0 +1,53 @@
+{% extends 'adminBase.html.twig' %}
+{% block body %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center">Liste des catalogue d'article</h6>
+        </div>
+        <div class="card-body">
+            {% for message in app.flashes('deleted') %}
+                <div class="alert alert-danger">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="table-layout: fixed">
+                    <thead>
+                    <tr>
+                        <th>sous Categorie</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for catalogue in catalogueArticle %}
+                        <tr>
+                            <td>{{ catalogue.sousCategorie.nom }}</td>
+                            <td>{{ catalogue.nom }}</td>
+                            <td>{{ catalogue.description }}</td>
+                            <td><img src="/assets/upload{{  asset(catalogue.image) }}" alt="" class="img-fluid px-2 px-sm-3 mt-2 mb-3 "></td>
+                            <td>
+                                <a href="{{ path('add_catalogue_article', {'id': catalogue.id } ) }}">
+                                    <i class="fas fa-fw fa-cog"></i>
+                                </a>
+                                <a href="{{ path('delete_catalogue_article', {'id': catalogue.id}) }}">
+                                    <i class="fas fa-fw fa-trash"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

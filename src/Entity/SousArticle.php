@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
+use App\Repository\SousArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ORM\Entity(repositoryClass=SousArticleRepository::class)
  */
-class Article
+class SousArticle
 {
     /**
      * @ORM\Id
@@ -16,7 +16,6 @@ class Article
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -33,10 +32,6 @@ class Article
      */
     private $images = [];
 
-    /**
-     * @ORM\ManyToOne(targetEntity=sousCategorie::class, inversedBy="articles")
-     */
-    private $sousCategorie;
 
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -108,6 +103,11 @@ class Article
      */
     private $desc3SousT3;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CatalogArticle::class, inversedBy="sousArticles")
+     */
+    private $catalogArticle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,17 +154,6 @@ class Article
     }
     public function addTabDimension(string $string){
         $this->tabDimension[]=$string;
-    }
-    public function getSousCategorie(): ?sousCategorie
-    {
-        return $this->sousCategorie;
-    }
-
-    public function setSousCategorie(?sousCategorie $sousCategorie): self
-    {
-        $this->sousCategorie = $sousCategorie;
-
-        return $this;
     }
     public function __toString()
     {
@@ -339,6 +328,18 @@ class Article
     public function setDesc3SousT3(?string $desc3SousT3): self
     {
         $this->desc3SousT3 = $desc3SousT3;
+
+        return $this;
+    }
+
+    public function getCatalogArticle(): ?CatalogArticle
+    {
+        return $this->catalogArticle;
+    }
+
+    public function setCatalogArticle(?CatalogArticle $catalogArticle): self
+    {
+        $this->catalogArticle = $catalogArticle;
 
         return $this;
     }

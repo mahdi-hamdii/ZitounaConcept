@@ -13,35 +13,18 @@
     <main>
         <div class="container categorie-container">
             <div class="row">
-                <h2 class="title">{{ souscategorie.nom }}</h2>
+                <h2 class="title">{{ catalogue.nom }}</h2>
                 <br/>
                 <p class="categorie-container-desc">
-                  {{ souscategorie.description }}
+                    {{ catalogue.description }}
                 </p>
             </div>
             <div class="row categorie-row">
                 {% for article in articles %}
-                <a class="box-b" href="{{ path('article_page', {'id': article.id} ) }}">
-                    <div class="box-b-wrapper">
-                        <img
-                                src="/assets/upload/{{ article.images | first }}"
-                                alt=""
-                        />
-                        <div class="details">
-                            <p>Voir plus <i class="fas fa-angle-double-right"></i></p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <p class="name">{{ article.nom }}</p>
-                    </div>
-                </a>
-                {% endfor %}
-                {% for catalogue in catalogues %}
-                    <a class="box-b" href="{{ path('list_sous_article_page', {'id': catalogue.id} ) }}">
+                    <a class="box-b" href="{{ path('sous_article_page', {'id': article.id} ) }}">
                         <div class="box-b-wrapper">
                             <img
-                                    src="/assets/upload/{{ catalogue.image }}"
+                                    src="/assets/upload/{{ article.images | first }}"
                                     alt=""
                             />
                             <div class="details">
@@ -50,7 +33,7 @@
                         </div>
 
                         <div>
-                            <p class="name">{{ catalogue.nom }}</p>
+                            <p class="name">{{ article.nom }}</p>
                         </div>
                     </a>
                 {% endfor %}

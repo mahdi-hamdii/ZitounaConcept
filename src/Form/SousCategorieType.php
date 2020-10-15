@@ -17,13 +17,15 @@ class SousCategorieType extends AbstractType
             ->add('nom')
             ->add('description')
             ->add('image',FileType::class,array(
-                'required'=>false,
+                'required'=>true,
                 'mapped'=>false,
                 'constraints'=>array(
                     new \Symfony\Component\Validator\Constraints\Image()
                 )
             ))
-            ->add('categorie')
+            ->add('categorie',CategorieType::class,array(
+                'required'=>false
+            ))
             ->add('submit',SubmitType::class)
         ;
     }

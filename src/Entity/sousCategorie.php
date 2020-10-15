@@ -44,9 +44,15 @@ class sousCategorie
      */
     private $categorie;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CatalogArticle::class, mappedBy="sousCategorie")
+     */
+    private $catalogArticles;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->catalogArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -135,5 +141,36 @@ class sousCategorie
     public function __toString()
     {
         return $this->getNom();
+    }
+
+    /**
+     * @return Collection|CatalogArticle[]
+     */
+    public function getCatalogArticles(): Collection
+    {
+        return $this->catalogArticles;
+    }
+
+    public function addCatalogArticle(CatalogArticle $catalogArticle): self
+    {
+        if (!$this->catalogArticles->contains($catalogArticle)) {
+            $this->catalogArticles[] = $catalogArticle;
+            $catalogArticle->setSousCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCatalogArticle(CatalogArticle $catalogArticle): self
+    {
+        if ($this->catalogArticles->contains($catalogArticle)) {
+            $this->catalogArticles->removeElement($catalogArticle);
+            // set the owning side to null (unless already changed)
+            if ($catalogArticle->getSousCategorie() === $this) {
+                $catalogArticle->setSousCategorie(null);
+            }
+        }
+
+        return $this;
     }
 }

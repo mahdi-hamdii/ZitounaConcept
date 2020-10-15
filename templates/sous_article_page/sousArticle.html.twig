@@ -16,44 +16,44 @@
                 <div class="box-c1">
                     <div class="big-pic" id="big-pic"></div>
                     <div class="small-pic">
-                        
+
                         {%  for image in article.images %}
-                        <img
-                                src="/assets/upload/{{image}}"
-                                alt=""
-                        />
+                            <img
+                                    src="/assets/upload/{{image}}"
+                                    alt=""
+                            />
                         {% endfor %}
-                       
+
                     </div>
                 </div>
                 <div class="box-c2">
                     <p class="name">{{ article.nom }}</p>
                     <p class="art-desc">{{ article.description }}</p>
                     <p class="categorie">
-                        <span>Sous Catégorie: </span> {{ article.souscategorie.nom }}
+                        <span>Sous Catégorie: </span> {{ article.catalogArticle.nom }}
                     </p>
                     <p class="dimention">
                         <span>Dimension:</span>
                         <br/>
                     <form>
 
-                    <select name="dimension" id="dimension" >
-                    {% for dim in article.tabDimension %}
-                    <option class="dim"> {{ dim }}</option>
-                    {% endfor %}
-                      </select>
+                        <select name="dimension" id="dimension" >
+                            {% for dim in article.tabDimension %}
+                                <option class="dim"> {{ dim }}</option>
+                            {% endfor %}
+                        </select>
                         <div class="form-inline">
-                        <div class="devis">
-                            <button type="submit" class="btn btn-success">
-                                Demande de Devis
-                            </button>
-                            <input
-                                    class="form-control form-control-lg input"
-                                    type="number"
-                                    value="1"
-                                    name="number"
-                            />
-                        </div>
+                            <div class="devis">
+                                <button type="submit" class="btn btn-success">
+                                    Demande de Devis
+                                </button>
+                                <input
+                                        class="form-control form-control-lg input"
+                                        type="number"
+                                        value="1"
+                                        name="number"
+                                />
+                            </div>
                         </div>
                     </form>
 
@@ -69,40 +69,40 @@
                 <div class="row">
                     <div class="col" style="padding-bottom: 2rem;">
                         {% if article.sousTitre1 is not null  %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre1 }}</p>
+                            <p class="art-sous-title">Title: {{ article.sousTitre1 }}</p>
                         {% endif %}
                         {% if article.desc1SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT1 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc1SousT1 }}</p>
                         {% endif %}
                         {% if article.desc2SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT1 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc2sousT1 }}</p>
                         {% endif %}
                         {% if article.desc3SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT1 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc3sousT1 }}</p>
                         {% endif %}
                         {% if article.sousTitre2 is not null  %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre2 }}</p>
+                            <p class="art-sous-title">Title: {{ article.sousTitre2 }}</p>
                         {% endif %}
                         {% if article.desc1SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT2 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc1SousT2 }}</p>
                         {% endif %}
                         {% if article.desc2SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT2 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc2sousT2 }}</p>
                         {% endif %}
                         {% if article.desc3SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT2 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc3sousT2 }}</p>
                         {% endif %}
                         {% if article.sousTitre3 %}
-                        <p class="art-sous-title">Title: {{ article.sousTitre3 }}</p>
+                            <p class="art-sous-title">Title: {{ article.sousTitre3 }}</p>
                         {% endif %}
                         {% if article.desc1SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT3 }} </p>
+                            <p class="art-des-sous-title">- {{ article.desc1SousT3 }} </p>
                         {% endif %}
                         {% if article.desc2SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT3 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc2sousT3 }}</p>
                         {% endif %}
                         {% if article.desc3SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT3 }}</p>
+                            <p class="art-des-sous-title">- {{ article.desc3sousT3 }}</p>
                         {% endif %}
                     </div>
                 </div>

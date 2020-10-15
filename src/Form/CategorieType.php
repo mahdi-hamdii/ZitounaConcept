@@ -17,7 +17,7 @@ class CategorieType extends AbstractType
         $builder
             ->add('nom')
             ->add('image',FileType::class,array(
-                    'required'=>false,
+                    'required'=>true,
                     'mapped'=>false,
                     'constraints'=>array(
                         new \Symfony\Component\Validator\Constraints\Image()
