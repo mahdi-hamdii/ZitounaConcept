@@ -34,6 +34,14 @@ class SousArticleRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+
+    public function findPromotion(){
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.promotion > :val')
+            ->setParameter('val',1 )
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return SousArticle[] Returns an array of SousArticle objects
     //  */

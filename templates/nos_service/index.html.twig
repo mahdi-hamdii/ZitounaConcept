@@ -10,23 +10,34 @@
     {% endfor %}
 {% endblock %}
 {% block body %}
+<!-- Thez ken li fel main -->
 <main>
-    <div class="container">
+    <div class="container categorie-container">
         <div class="row">
-            <div class="box-c1">
-            <section class="services">
-        Les Services de Zitouna concept
+            <h2 class="title">Nos Services</h2>
+            <br/>
+            <p class="categorie-container-desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, enim.
+            </p>
+        </div>
+        <div class="row categorie-row">
 
-        <div class="row">Tapissage Chaise</div>
-
-        <div class="row">Réparation Chaise</div>
-
-        <div class="row">service de déménagement</div>
-
-        <div class="row">Plan D'installation 2D/3D</div>
-    </section>
-            </div>
+                {% for service in services %}
+            <a class="box-a" href="{{ path('sous_service',{'id':service.id}) }}">
+                <div class="pic-wrapper">
+                    <img
+                            src="/assets/upload/{{ service.image }}"
+                            alt="not loaded"
+                    />
+                    <p class="details">
+                        Voir plus <i class="fas fa-angle-double-right"></i>
+                    </p>
+                </div>
+                <div>
+                    <p class="name" style="margin-bottom: .7rem;">{{ service.nom }}</p>
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </div>
-</main>
 {% endblock %}

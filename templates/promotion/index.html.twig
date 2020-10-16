@@ -31,7 +31,23 @@
                     <p class="sale">{{ article.promotion }}</p>
                 </div>
                 {% endfor %}
-
+               {% for sousArticle in sousArticles %}
+                <div class="article promo-box">
+                    <a href="{{ path('sous_article_page', {'id': sousArticle.id} ) }}">
+                        <div class="pic-wrapper">
+                            <img
+                                    src="/assets/upload/{{ sousArticle.images | first }}"
+                                    alt=""
+                            />
+                            <p class="details">
+                                Voir plus <i class="fas fa-angle-double-right"></i>
+                            </p>
+                        </div>
+                    </a>
+                    <p class="name">{{ sousArticle.nom }}</p>
+                    <p class="sale">{{ sousArticle.promotion }}</p>
+                </div>
+                {% endfor %}
 
             </div>
         </div>
