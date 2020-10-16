@@ -84,14 +84,14 @@ class SousServiceController extends AbstractController
         ]);
     }
     /**
-     * @Route("admin/delete/sous/service/{id}",name="admin_delete_service")
+     * @Route("admin/delete/sous/service/{id}",name="admin_delete_sous_service")
      */
 
     public function deleteCategory(Request $request,SousService $article){
         $manager=$this->getDoctrine()->getManager();
         $manager->remove($article);
         $manager->flush();
-        $this->addFlash('deleted','service deleted successfully');
+        $this->addFlash('deleted','sous service deleted successfully');
         return $this->redirectToRoute("sous_service_list");
 
     }
