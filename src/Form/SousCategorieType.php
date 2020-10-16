@@ -23,9 +23,7 @@ class SousCategorieType extends AbstractType
                     new \Symfony\Component\Validator\Constraints\Image()
                 )
             ))
-            ->add('categorie',CategorieType::class,array(
-                'required'=>false
-            ))
+            ->add('categorie')
             ->add('submit',SubmitType::class)
         ;
     }

@@ -82,9 +82,13 @@ class NosServiceController extends AbstractController
     /**
      * @Route("/admin/service/delete/{id}",name="delete_service")
      */
-    public function deleteCategory(Request $request,Services $categorie){
+    public function deleteCategory(Request $request,Services $services){
         $manager=$this->getDoctrine()->getManager();
-        $manager->remove($categorie);
+        $sousServices=$services->getSousServices();
+        foreach ($sousServices as $sousService ){
+            $manager->remove($sousService);
+        }
+        $manager->remove($services);
         $manager->flush();
         $this->addFlash('deleted','service deleted successfully');
         return $this->redirectToRoute("service_list");

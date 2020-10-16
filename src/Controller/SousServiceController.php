@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Entity\Services;
 use App\Entity\SousArticle;
@@ -81,5 +82,17 @@ class SousServiceController extends AbstractController
         return $this->render('sous_service/listSousService.html.twig',[
             'categories'=>$categories
         ]);
+    }
+    /**
+     * @Route("admin/delete/sous/service/{id}",name="admin_delete_service")
+     */
+
+    public function deleteCategory(Request $request,SousService $article){
+        $manager=$this->getDoctrine()->getManager();
+        $manager->remove($article);
+        $manager->flush();
+        $this->addFlash('deleted','service deleted successfully');
+        return $this->redirectToRoute("sous_service_list");
+
     }
 }
