@@ -39,7 +39,7 @@
 
                     <div class=" mb-3" name="dimension" id="dimension" >
                     {% for dim in article.tabDimension %}
-                    <p class="dim"> -{{ dim }}</p>
+                    <p class="dim"> {{ dim }}</p>
                     {% endfor %}
                       </div>
                         <div class="form-inline">
@@ -58,10 +58,10 @@
                     </form>
 
                     <div class="article-social">
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.facebook.com/ZitounaConcept" target="_blank" rel="noopener noreferrer"
                         ><i class="fab fa-facebook"></i
                             ></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.instagram.com/zitouna_concept/" target="_blank" rel="noopener noreferrer"
                         ><i class="fab fa-instagram"></i
                             ></a>
                     </div>
@@ -72,37 +72,37 @@
                         <p class="art-sous-title"> <i class="fas fa-hand-point-right"></i> {{ article.sousTitre1 }}</p>
                         {% endif %}
                         {% if article.desc1SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT1 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc1SousT1 }}</p>
                         {% endif %}
                         {% if article.desc2SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT1 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc2sousT1 }}</p>
                         {% endif %}
                         {% if article.desc3SousT1 is not null  %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT1 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc3sousT1 }}</p>
                         {% endif %}
                         {% if article.sousTitre2 is not null  %}
                         <p class="art-sous-title"> <i class="fas fa-hand-point-right"></i> {{ article.sousTitre2 }}</p>
                         {% endif %}
                         {% if article.desc1SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT2 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc1SousT2 }}</p>
                         {% endif %}
                         {% if article.desc2SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT2 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc2sousT2 }}</p>
                         {% endif %}
                         {% if article.desc3SousT2 %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT2 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc3sousT2 }}</p>
                         {% endif %}
                         {% if article.sousTitre3 %}
                         <p class="art-sous-title">  <i class="fas fa-hand-point-right"></i> {{ article.sousTitre3 }}</p>
                         {% endif %}
                         {% if article.desc1SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc1SousT3 }} </p>
+                        <p class="art-des-sous-title"> {{ article.desc1SousT3 }} </p>
                         {% endif %}
                         {% if article.desc2SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc2sousT3 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc2sousT3 }}</p>
                         {% endif %}
                         {% if article.desc3SousT3 %}
-                        <p class="art-des-sous-title">- {{ article.desc3sousT3 }}</p>
+                        <p class="art-des-sous-title"> {{ article.desc3sousT3 }}</p>
                         {% endif %}
                     </div>
                 </div>
