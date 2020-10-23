@@ -11,7 +11,9 @@ body {
 /* -------------------------------------------------------------- */
 /* Navbar */
 .nav-ul {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  margin-left: auto !important;
+  margin-right: 1.2rem !important;
 }
 #nav-item a {
   color: #cecece;
@@ -27,7 +29,12 @@ body {
   color: #96bf3d;
 }
 .navbar-brand {
-  margin-left: 10%;
+  margin-left: 6%;
+}
+.logo__navbar{
+  width: 8rem !important;
+  position: absolute !important;
+  top:13px !important;
 }
 
 .social {
@@ -49,13 +56,28 @@ body {
 
 @media only screen and (max-width: 1580px) {
   .navbar-brand {
-    margin-left: 5%;
+    margin-left: 2%;
+  }
+
+  .logo__navbar{
+    width: 7.5rem !important;
+    top:12px !important;
   }
 
   .social {
     margin-right: 4%;
   }
 }
+
+@media only screen and (max-width:1350px){
+  .navbar-brand {
+    margin-left: 0%;
+  }
+
+  
+}
+
+
 
 @media only screen and (max-width: 1266px) {
   .navbar-brand {
@@ -64,6 +86,11 @@ body {
 
   .social {
     margin-right: 0%;
+  }
+
+  .logo__navbar{
+    width: 6.5rem !important;
+    top:1px !important;
   }
 }
 
@@ -81,6 +108,18 @@ body {
 }
 
 
+@media only screen and (max-width: 1120px) {
+  .navbar-brand {
+    margin-left: -2%;
+  }
+
+  .logo__navbar{
+    width: 6rem !important;
+    top:1px !important;
+  }
+}
+
+
 @media only screen and (max-width: 1072px) {
   #nav-item a {
     padding: 1rem 0.3rem;
@@ -90,6 +129,15 @@ body {
     font-size: 1.1rem !important;
     padding: 3px 0px;
     padding-left: 2px;
+  }
+
+  .navbar-brand {
+    margin-left: -2%;
+  }
+
+  .logo__navbar{
+    width: 6rem !important;
+    top:1px !important;
   }
 }
 
@@ -109,7 +157,12 @@ body {
     text-align: center;
   }
   .navbar-brand {
-    margin-left: 3%;
+    margin-left: 2%;
+  }
+
+  .logo__navbar{
+    width: 8rem !important;
+    top:2px !important;
   }
 
 }
@@ -126,6 +179,15 @@ body {
   .social {
     text-align: center;
   }
+
+  .navbar-brand {
+    margin-left: 0%;
+  }
+
+  .logo__navbar{
+    width: 7rem !important;
+    top:2px !important;
+  }
 }
 
 @media only screen and (max-width: 340px) {
@@ -133,13 +195,22 @@ body {
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
   }
+
+  .navbar-brand {
+    margin-left: 0%;
+  }
+
+  .logo__navbar{
+    width: 6rem !important;
+    top:4px !important;
+  }
 }
 
 /* -------------------------------------------------------------- */
 /* Carousel */
 .carousel {
   position: relative;
-  top: 2.1rem;
+  top: 1.6rem;
 }
 
 .carr-pic {
@@ -340,7 +411,7 @@ body {
   background-color: rgb(211, 32, 32);
   color: #fff;
   font-weight: 600;
-  padding: 1rem 0.9rem;
+  padding: 1.9rem 1rem;
   border-radius: 50%;
   font-size: 1.3rem;
   transform: rotate(20deg);
